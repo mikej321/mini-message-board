@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav>
+      <a href="/new">Create a message</a>
+    </nav>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <%/* loop through the messages array using EJS and for
+    each one, display the user, text, and the date the
+    message was added. */ %>
+
+    <% if (messages.length > 0) { %>
+        <% messages.forEach((message) => { %>
+          <p>User: <%=message.user%></p>
+          <p>Text: <%=message.text%></p>
+          <p>Date Added: <%=message.added%></p>
+       <% }) %>
+    <% } %>
+  </body>
+</html>
